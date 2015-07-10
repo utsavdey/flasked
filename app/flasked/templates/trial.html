@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+{% for message in form.email.errors %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+   
+  {% for message in form.password.errors %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+<form action="{{ url_for('trial') }}" class="form-horizontal"  method=post>
+	{{ form.hidden_tag() }}
+   	{{ form.submit(class="btn btn-primary") }}
+		</div >
+	</div>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+ 
+{% block content %}
+<div class="container-fluid-sm-11">
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar ligula eget tellus tincidunt porta. 
+Integer lacus nulla, consectetur sit amet felis aliquam, mattis consectetur diam. Aliquam convallis fringilla 
+ipsum, eu venenatis sapien sodales convallis. Nullam facilisis rhoncus feugiat. Integer mattis fringilla ligula
+ vitae convallis. Phasellus malesuada, diam ut blandit molestie, tellus mi suscipit libero, et suscipit tellus 
+ orci id diam. Maecenas libero mi, rhoncus ut convallis nec, lobortis vitae dui. Nulla non arcu efficitur nisl 
+ venenatis ultricies sit amet aliquet urna. Sed in metus pulvinar, commodo diam vehicula, rutrum lectus. Cras 
+ mauris orci, accumsan ullamcorper malesuada eget, posuere ac risus.
+</P>
+<P>
+Maecenas non interdum purus, id elementum metus. In rutrum cursus quam, id iaculis libero ultricies vel. Praesent
+ sapien ipsum, venenatis suscipit auctor at, porttitor ut odio. Quisque sit amet posuere tortor. Nulla sodales
+ lacinia velit, et egestas purus suscipit eu. Cras malesuada nulla sit amet lacus pellentesque, in vestibulum 
+ leo varius. Aenean sed velit vitae ex convallis fringilla. Sed ac odio et lectus auctor venenatis. Maecenas
+ non ornare ex. Donec gravida sed mi vel vehicula.
+</P>
+<P>
+In a metus in leo gravida faucibus ultrices in tortor. Quisque malesuada vel magna ut consequat. Pellentesque
+ condimentum pellentesque erat, ac auctor urna dignissim eget. Sed tempus tempor ipsum. Proin et eleifend sem,
+ mollis pretium odio. Praesent semper elit in consequat convallis. Fusce sit amet dui at tortor vulputate ultrices. 
+ Vivamus sagittis molestie augue, eget egestas lacus varius at.
+</P>
+<P>
+Nam eros lectus, facilisis id massa non, laoreet mattis libero. Mauris varius nisi et est elementum efficitur.
+ Pellentesque tempus erat massa, scelerisque feugiat nibo urna. Fusce in tempor felis. Curabitur eget tristique
+ libero. Integer semper lectus leo, ut aliquet elit dignissim ac. Donec id ultricies metus. Lorem ipsum dolor sit
+ amet, consectetur adipiscing elit. Duis sit amet dui id mauris interdum dignissim.
+</P>
+<P>
+Morbi vitae feugiat ante. Etiam auctor, est molestie blandit elementum, lectus lacus fermentum mauris, quis
+ laoreet felis purus in justo. Nam ornare est a est scelerisque, eu posuere dui ornare. Vestibulum ornare et 
+ metus finibus lacinia. Duis odio tellus, finibus et tincidunt convallis, blandit id quam. Vivamus posuere
+ orci ligula, non tincidunt orci rutrum vitae. Nunc cursus massa dolor, ac auctor nunc semper non.
+  ...
+  </P>
+  
+</div>
+ 
+ {% if 'email' in session %}
+
+ {% if state==1 %}
+  <form action="{{ url_for('lorem') }}" class="form-horizontal"  method=post>
+	{{ form.hidden_tag() }}
+	<div class="form-group-sm-11">
+   	{{ form.submit(class="btn btn-success") }}
+		</div >
+	
+  </form>
+ {% endif%}
+ {% if state==0 %}
+ 
+ 
+ 
+ <form action="{{ url_for('lorem') }}" class="form-horizontal"  method=post>
+	{{ form.hidden_tag() }}
+	<div class="form-group-sm-11">
+   	{{ form.submit(class="btn btn-primary") }}
+		</div >
+	
+  </form>
+{% endif %}
+{%endif%}
+{% endblock %}

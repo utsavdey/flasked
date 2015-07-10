@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+ 
+{% block content %}
+<div class="container-fluid-sm-11">
+<P>
+West Bengal is a state in eastern India, between the Himalayas and the Bay of Bengal. Its capital, Kolkata (formerly Calcutta), retains architectural and cultural remnants of its past as an East India Company trading post and the capital of the British Raj. The city's colonial landmarks include the government buildings around B.B.D. Bagh square, and the iconic Victoria Memorial, dedicated to Britain's Queen Victoria.
+Area: 88,752 km²
+</p>
+<p>
+Founded: November 1, 1956
+</p>
+<p>
+Capital: Kolkata
+</p>
+<p>
+Colleges and Universities: West Bengal University of Technology, more
+</p>
+ 
+</div>
+ 
+ {% if 'email' in session %}
+
+ {% if state==1 %}
+  <form action="{{ url_for('bengal') }}" class="form-horizontal"  method=post>
+	{{ form.hidden_tag() }}
+	<div class="form-group-sm-11">
+   	{{ form.submit(class="btn btn-success") }}
+		</div >
+	
+  </form>
+ {% endif%}
+ {% if state==0 %}
+ 
+ 
+ 
+ <form action="{{ url_for('bengal') }}" class="form-horizontal"  method=post>
+	{{ form.hidden_tag() }}
+	<div class="form-group-sm-11">
+   	{{ form.submit(class="btn btn-primary") }}
+		</div >
+	
+  </form>
+{% endif %}
+{%endif%}
+{% endblock %}
